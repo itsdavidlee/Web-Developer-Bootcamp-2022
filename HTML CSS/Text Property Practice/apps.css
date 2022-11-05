@@ -1,0 +1,15 @@
+h1 {
+    text-align: center;
+    width: center;
+    font-weight: normal;
+    font-family: monospace;
+    text-decoration: blue underline wavy;
+}
+a {
+    text-decoration: none
+}
+p {
+    font-family: verdana;
+    line-height:2;
+    letter-spacing: normal;
+}

@@ -1,0 +1,15 @@
+section {
+    width: 80%;
+    height: 800px;
+    /* background-image: url("https://i.pinimg.com/originals/c0/08/7e/c0087eae2677a325cff71e6484971992.jpg");
+    background-size: cover;
+    background-position: bottom; */
+    background: url("https://i.pinimg.com/originals/c0/08/7e/c0087eae2677a325cff71e6484971992.jpg") center/40% no-repeat, blueviolet; 
+    margin: 0 auto;
+
+}
+
+h1 {
+    font-size: 100px;
+    color: white;
+}

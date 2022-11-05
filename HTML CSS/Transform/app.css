@@ -1,0 +1,43 @@
+h1{
+    background-color: aqua;
+    border: 5px solid green;
+    color: peachpuff;
+    padding: 0.7em;
+    width: 300px;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 20px auto;
+}
+
+h1:nth-of-type(2n) {
+    background-color: red;
+}
+
+section:first-of-type h1:nth-of-type(1) {
+    transform-origin: bottom right;
+    transform: rotate(45deg);
+}
+
+section:first-of-type h1:nth-of-type(2) {
+    transform: scale(0.6);
+}
+
+section:first-of-type h1:nth-of-type(3) {
+    transform: translate(100px);
+}
+
+section:first-of-type h1:nth-of-type(4) {
+    transform: translate(-100px, -10px);
+}
+
+section:nth-of-type(2) h1:nth-of-type(1) {
+    transform: skew(10deg,5deg);
+}
+
+section:nth-of-type(2) h1:nth-of-type(2) {
+    transform: rotate(-30deg) scale(0.8);
+}
+
+section:nth-of-type(2) h1:nth-of-type(3) {
+    transform: translate(-500px) rotate(180deg) scaleY(1.5);
+}

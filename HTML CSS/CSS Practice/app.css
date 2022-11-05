@@ -1,0 +1,92 @@
+/* * {
+    background-color: cyan;
+} */
+
+
+body {
+    background-color: #f1faee;
+}
+
+button {
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+
+h1,h2{
+    color: #1d3557;
+}
+
+#signup{
+    background-color:#1d3557;
+    color: #f1faee;
+}
+
+span{
+    color: #457b9d;
+}
+
+.tag{
+    background-color: red;
+    color: white;
+    font-size: 16px;
+}
+
+/* span a {
+    color: #457b9d;
+} */
+
+.post a {
+    color: #457b9d;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer a{
+    color: red;
+}
+
+h2 + button{
+    font-size: 20px;
+    background-color: magenta;
+}
+
+footer > a {
+    color: purple
+}
+
+input[type="password"]{
+    color:aqua;
+}
+
+.post button:hover {
+    background-color: #e63946;
+    color: #f1faee;
+}
+/* the .post button will show up over the buttonhover down below because of specificity (calculation done by the browser to determine score. ID, Class, Element is the rank order.) */
+button:hover{
+    background-color: olive;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.post button:active{
+    background-color: teal
+}
+
+.post:nth-of-type(2n) {
+    background-color: lightgray;
+}
+
+h2::first-letter{
+    font-size:40px;
+}
+
+p::first-line{
+    color: purple;
+}
+
+p::selection{
+    background-color: orange;
+}
