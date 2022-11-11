@@ -1,9 +1,15 @@
 const videosContainer = document.getElementById('videosContainer')
+const videoIDInput = document.getElementById('videoID')
+
 let youtubeVideoIDs = [];
 
+// localStorage.setItem('youtubeVideoIDs', JSON.stringify(["9C74_rOgui8", "njTh_OwMljA"]) )
 const loadVideos = () => {
-    youtubeVideoIDs = ["9C74_rOgui8", "njTh_OwMljA"];
-}
+    youtubeVideoIDs = JSON.parse(localStorage.getItem('youtubeVideoIDs')) || [];
+    console.log(youtubeVideoIDs);
+
+    // youtubeVideoIDs = ["9C74_rOgui8", "njTh_OwMljA"];
+};
 
 const displayVideos = () => {
     // for (let i = 0; i < youtubeVideoIDs.length; i++) {
@@ -22,6 +28,34 @@ const displayVideos = () => {
     //videoHTMLStrings will output a string that includes all elements
     videosContainer.innerHTML = videoHTMLStrings;
 };
+
+const saveVideo = (e) => {
+    e.preventDefault();
+    const videoID = videoIDInput.value;
+    youtubeVideoIDs.unshift(videoID); //this adds videoID into the array youtubeVideoIDs
+    videoIDInput.value = ""; //resets the form to be blank after pressing save video button
+    localStorage.setItem('youtubeVideoIDs', JSON.stringify(youtubeVideoIDs));
+    displayVideos();
+
+};
+
+const clickVideo = (event, id) => {
+    console.log(event,id);
+    if(event.target.classList.contains('delete-btn')) {
+        //remove the video from the youtubeVideoIDs list
+        youtubeVideoIDs = youtubeVideoIDs.filter(i => {
+        return i !== id;
+        localStorage.setItem('youtubeVideoIDs', JSON.stringify(youtubeVideoIDs));
+        displayVideos();
+        })
+    }else {
+        //show the popup
+    }
+}
+
+const deleteButton = () => {
+
+}
 
 loadVideos();
 displayVideos();
