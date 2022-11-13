@@ -1,5 +1,7 @@
-const videosContainer = document.getElementById('videosContainer')
-const videoIDInput = document.getElementById('videoID')
+const videosContainer = document.getElementById('videosContainer');
+const videoIDInput = document.getElementById('videoID');
+const popup = document.getElementById('popup');
+const videoEl = document.querySelector('#popup > iframe');
 
 let youtubeVideoIDs = [];
 
@@ -44,12 +46,15 @@ const clickVideo = (event, id) => {
     if(event.target.classList.contains('delete-btn')) {
         //remove the video from the youtubeVideoIDs list
         youtubeVideoIDs = youtubeVideoIDs.filter(i => {
-        return i !== id;
+        return i !== id});
         localStorage.setItem('youtubeVideoIDs', JSON.stringify(youtubeVideoIDs));
         displayVideos();
-        })
+    
     }else {
         //show the popup
+        videoEl.src=`https://www.youtube.com/embed/${id}`;
+        popup.classList.add('open');
+        popup.classList.remove('closed');
     }
 }
 
