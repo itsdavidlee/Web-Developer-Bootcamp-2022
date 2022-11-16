@@ -58,6 +58,11 @@ const clickVideo = (event, id) => {
     }
 }
 
+const handlePopupClick = () => {
+    popup.classList.add('closed');
+    popup.classList.remove('open');
+}
+
 const deleteButton = () => {
 
 }

@@ -9,7 +9,7 @@
     align-items: center;
     background-color: rgba(20,20,20, 0.95);
     padding: 30px;
-    transition all 300ms: 
+    transition: all 300ms;
 }
 
 iframe{
@@ -28,4 +28,121 @@ iframe{
 #popup.closed {
     transform: translateY(-100vh);
     opacity: 0;
+}
+
+
+:root {
+    --background: #232946;
+    --headline: #fffffe;
+    --copy: #b8c1ec;
+    --accent: #eebbc3;
+    --accent-text: #232946;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--background);
+}
+
+* {
+    box-sizing: border-box;
+    
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+p, label {
+    color: var(--copy);
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    line-height: 34px;
+
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    margin-top; 60px;
+}
+
+h1.headline {
+    color: var(--headline);
+    font-size: 54px;
+    margin-bottom: 2px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 7.5px 10px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+form > button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: var(--accent);
+    color: var(--accent-text);
+    border: none;
+    font-size:18px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#videosContainer {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 60px;
+}
+
+.thumbnail {
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 250ms;
+}
+
+.thumbnail:hover{
+    transform: scale(1.2);
+}
+#videosContainer > li {
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius:100%;
+
+}
+
+@media only screen and (max-width: 800px){
+    .header {
+        display: block;
+        /* or grid-template-columns: 1fr */
+    }
 }
