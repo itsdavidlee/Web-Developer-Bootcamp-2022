@@ -4,6 +4,7 @@ const popup = document.getElementById('popup');
 const videoEl = document.querySelector('#popup > iframe');
 
 let youtubeVideoIDs = [];
+let deletedVideoIDs = [];
 
 // localStorage.setItem('youtubeVideoIDs', JSON.stringify(["9C74_rOgui8", "njTh_OwMljA"]) )
 const loadVideos = () => {
@@ -48,7 +49,11 @@ const clickVideo = (event, id) => {
         youtubeVideoIDs = youtubeVideoIDs.filter(i => {
         return i !== id});
         localStorage.setItem('youtubeVideoIDs', JSON.stringify(youtubeVideoIDs));
+        console.log(id);
+        deletedVideoIDs.push(id);
+        console.log(deletedVideoIDs)
         displayVideos();
+
     
     }else {
         //show the popup
@@ -63,7 +68,17 @@ const handlePopupClick = () => {
     popup.classList.remove('open');
 }
 
-const deleteButton = () => {
+const undoDelete = (e) => {
+    e.preventDefault();
+    if (deletedVideoIDs.length === 0) {
+        console.log(deletedVideoIDs);
+    } else {
+        const videoID = deletedVideoIDs.pop(); //returns the most recent deleted videoID
+        youtubeVideoIDs.unshift(videoID); //this adds videoID into the array youtubeVideoIDs
+        videoIDInput.value = ""; //resets the form to be blank after pressing save video button
+        localStorage.setItem('youtubeVideoIDs', JSON.stringify(youtubeVideoIDs));
+        displayVideos();
+    }
 
 }
 

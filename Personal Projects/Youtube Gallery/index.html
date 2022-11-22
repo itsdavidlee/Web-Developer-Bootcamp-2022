@@ -16,9 +16,15 @@
                     As you come across a helpful video, add the video ID here!</p>
             </div>
             <form>
-                <label for="videoID">Video ID</label>
-                <input type="text" name="videoID" id="videoID" placeholder="ABCD1234">
-                <button onclick="saveVideo(event)">Save the Video!</button>
+                <div>
+                    <label for="videoID">Video ID</label>
+                    <input type="text" name="videoID" id="videoID" placeholder="ABCD1234">
+                </div>
+                
+                <div class = "buttons">
+                    <button onclick="saveVideo(event)" class = "saveButton">Save the Video!</button>
+                    <button onclick="undoDelete(event)" class = "undoDeleteButton">Undo Delete</button>
+                </div>
             </form>
         </div>
             <ul id="videosContainer">

@@ -90,7 +90,22 @@ input {
     font-size: 18px;
 }
 
-form > button {
+.undoDeleteButton {
+    background-color: var(--copy);
+    color: var(--accent-text);
+    display: flex;
+    width: 50%;
+    margin-left: 10px;
+    text-align: center;
+    justify-content: center;
+}
+.buttons {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+form >div> button {
     margin-top: 10px;
     padding: 10px;
     border-radius: 10px;
