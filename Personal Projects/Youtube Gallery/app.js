@@ -75,11 +75,9 @@ const undoDelete = (e) => {
     } else {
         const videoID = deletedVideoIDs.pop(); //returns the most recent deleted videoID
         youtubeVideoIDs.unshift(videoID); //this adds videoID into the array youtubeVideoIDs
-        videoIDInput.value = ""; //resets the form to be blank after pressing save video button
         localStorage.setItem('youtubeVideoIDs', JSON.stringify(youtubeVideoIDs));
         displayVideos();
     }
-
 }
 
 loadVideos();
