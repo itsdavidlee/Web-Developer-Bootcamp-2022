@@ -35,10 +35,26 @@ const displayVideos = () => {
 const saveVideo = (e) => {
     e.preventDefault();
     const videoID = videoIDInput.value;
+    if(deletedVideoIDs.indexOf(videoID) !== -1) {//need to make sure this videoID is not in the deletedVideoIDs
+        const response = confirm('You have previously deleted this video. Would you like to bring it back?');
+        
+        if (response) {
+            youtubeVideoIDs.unshift(videoID); //this adds videoID into the array youtubeVideoIDs
+            videoIDInput.value = ""; //resets the form to be blank after pressing save video button
+            localStorage.setItem('youtubeVideoIDs', JSON.stringify(youtubeVideoIDs));
+            displayVideos();
+        } else {
+            console.log('Cancel');
+        
+        }
+        //console.log('This videoID was previously deleted!')
+    } else if (deletedVideoIDs.indexOf(videoID) == -1) {
     youtubeVideoIDs.unshift(videoID); //this adds videoID into the array youtubeVideoIDs
     videoIDInput.value = ""; //resets the form to be blank after pressing save video button
     localStorage.setItem('youtubeVideoIDs', JSON.stringify(youtubeVideoIDs));
     displayVideos();
+    }
+
 
 };
 
